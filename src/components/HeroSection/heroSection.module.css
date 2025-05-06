@@ -1,0 +1,28 @@
+.container {
+  @apply w-full h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-12 px-6 
+    bg-gradient-to-br from-[#f9fafb] to-[#e5e7eb] dark:from-[#111827] dark:to-[#1f2937];
+}
+  .textBlock {
+    @apply flex-1 max-w-xl text-center md:text-left;
+  }
+  
+  .title {
+    @apply text-6xl font-bold text-chelsea mb-4;
+  }
+  
+  .subtitle {
+    @apply text-3xl font-medium text-chelsea/80 mb-4;
+  }
+  
+  .imageWrapper {
+    @apply flex justify-center;
+  }
+  
+  .image {
+    @apply rounded-full shadow-lg object-cover;
+  }
+  
+  .button {
+    @apply text-lg px-6 py-3 bg-gold text-black hover:bg-chelsea hover:text-white transition-colors duration-300;
+  }
+  
