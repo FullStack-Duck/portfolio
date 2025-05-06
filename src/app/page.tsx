@@ -4,7 +4,7 @@ import HeroSection from "@/components/HeroSection/heroSection";
 import AboutMeSection from "@/components/AboutMeSection";
 import Header from "@/components/Header/Header";
 import TechSection from "@/components/TechSection/TechSection";
-import Testimonials from "@/components/Testimonials/Testiomnials";
+import Testimonials from "@/components/Testimonials/Testimonials";
 import Projects from "@/components/ProjectSection/Projects";
 
 export default function Home() {
