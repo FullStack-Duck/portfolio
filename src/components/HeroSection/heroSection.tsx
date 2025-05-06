@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function HeroSection() {
   return (
-    <section className="w-full bg-gradient-to-br from-[#f9fafb] to-[#e5e7eb] dark:from-[#111827] dark:to-[#1f2937] px-4 md:px-12 lg:px-20 py-40">
+    <section className="w-full bg-gradient-to-br from-[#f9fafb] to-[#e5e7eb] dark:from-[#111827] dark:to-[#1f2937] px-4 md:px-12 lg:px-20 py-20">
       <div className="max-w-7xl mx-auto flex flex-col items-center gap-16">
         {/* HERO BLOCK */}
         <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-12 w-full">
