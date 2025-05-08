@@ -12,7 +12,7 @@ export default function HeroSection() {
 <div className="max-w-5xl mx-auto flex flex-col items-center justify-center gap-24 px-4 sm:px-6 lg:gap-40">
 
           {/* HERO BLOCK */}
-          <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-32 w-full px-8 sm:px-16 lg:px-32">
+          <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 sm:gap-20 lg:gap-32 w-full px-4 sm:px-10 lg:px-16">
           <motion.div
               className="flex-1 text-center md:text-left"
               initial={{ opacity: 0, y: 40 }}
