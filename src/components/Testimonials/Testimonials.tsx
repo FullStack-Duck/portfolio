@@ -67,7 +67,6 @@ export default function Testimonials() {
     emblaApi.on("select", onSelect);
   }, [emblaApi, onSelect]);
 
-  // Autoplay cada 5 segundos
   useEffect(() => {
     if (!emblaApi) return;
     const interval = setInterval(() => {
@@ -85,7 +84,7 @@ export default function Testimonials() {
             {testimonials.map((t, idx) => (
               <div
                 key={idx}
-                className="min-w-[33.3333%] flex justify-center items-center"
+                className="min-w-full sm:min-w-[50%] lg:min-w-[33.3333%] flex justify-center items-center px-2"
               >
                 <Card className="w-full p-6">
                   <CardContent className="flex flex-col items-center gap-4">
@@ -95,7 +94,9 @@ export default function Testimonials() {
                       className="w-16 h-16 rounded-full shadow-md"
                     />
                     <p className="text-lg font-semibold">{t.name}</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{t.role}</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                      {t.role}
+                    </p>
                     <p className="text-base italic mt-2">"{t.comment}"</p>
                   </CardContent>
                 </Card>

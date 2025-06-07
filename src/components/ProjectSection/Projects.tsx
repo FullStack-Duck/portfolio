@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export interface Project {
   title: string;
@@ -58,43 +58,57 @@ const projects: Project[] = [
   },
 ];
 
-const PROJECTS_PER_PAGE = 6;
-
 export default function Projects() {
   const [page, setPage] = useState(0);
+  const [projectsPerPage, setProjectsPerPage] = useState(6);
 
-  const totalPages = Math.ceil(projects.length / PROJECTS_PER_PAGE);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setProjectsPerPage(1);
+      } else {
+        setProjectsPerPage(6);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const totalPages = Math.ceil(projects.length / projectsPerPage);
   const paginatedProjects = projects.slice(
-    page * PROJECTS_PER_PAGE,
-    (page + 1) * PROJECTS_PER_PAGE
+    page * projectsPerPage,
+    (page + 1) * projectsPerPage
   );
 
   return (
-<section className="min-h-screen snap-start bg-gradient-to-br from-[#f9fafb] to-[#e5e7eb] dark:from-[#111827] dark:to-[#1f2937] px-20 pt-20 pb-32">
-<div className="w-full text-center">
-      <h2 className="text-6xl font-bold text-blue-900 dark:text-yellow-400 mb-4">
-  My Projects
-</h2>
+    <section className="min-h-screen snap-start bg-gradient-to-br from-[#f9fafb] to-[#e5e7eb] dark:from-[#111827] dark:to-[#1f2937] px-6 sm:px-20 pt-20 pb-32">
+      <div className="w-full text-center">
+        <h2 className="text-4xl sm:text-6xl font-bold text-blue-900 dark:text-yellow-400 mb-4">
+          My Projects
+        </h2>
 
-<p className="text-xl uppercase tracking-widest text-yellow-500">
-  Crafted with passion ⚒️
-</p>
+        <p className="text-xl uppercase tracking-widest text-yellow-500">
+          Crafted with passion ⚒️
+        </p>
 
-<div className="w-24 h-1 bg-yellow-400 mx-auto my-6 rounded-full" />
+        <div className="w-24 h-1 bg-yellow-400 mx-auto my-6 rounded-full" />
 
-<p className="text-lg text-neutral-600 dark:text-neutral-300 italic">
-  Source code and deploys are coming soon. Stay tuned!
-</p>
+        <p className="text-lg text-neutral-600 dark:text-neutral-300 italic">
+          Source code and deploys are coming soon. Stay tuned!
+        </p>
+
         <div className="w-24 h-1 bg-yellow-400 mx-auto my-6 rounded-full" />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 mt-16">
           {paginatedProjects.map((project, index) => (
             <div key={index} className="bg-white dark:bg-neutral-800 rounded-lg shadow-lg p-6 hover:scale-105 transition-transform">
               <img
-  src={project.image}
-  alt={project.title}
-  className="h-48 w-full object-contain rounded-md mb-4"
-/>
+                src={project.image}
+                alt={project.title}
+                className="h-48 w-full object-contain rounded-md mb-4"
+              />
               <h3 className="text-xl font-semibold text-blue-800 dark:text-yellow-300">
                 {project.title}
               </h3>
