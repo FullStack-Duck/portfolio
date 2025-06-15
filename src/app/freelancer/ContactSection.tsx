@@ -51,17 +51,24 @@ export default function ContactSection() {
             required
             className="bg-white/90 placeholder:text-neutral-500 text-black border border-gold focus:ring-2 focus:ring-gold"
           />
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex justify-center">
             <Button type="submit" className="bg-gold text-black hover:bg-white hover:text-chelsea">
               📬 Send Message
             </Button>
-            <a href="https://wa.me/5493510000000" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-white text-chelsea border border-gold hover:bg-gold hover:text-black">
-                💬 Contact via WhatsApp
-              </Button>
-            </a>
           </div>
         </motion.form>
+
+        <div className="flex justify-center mt-6">
+          <a
+            href="https://api.whatsapp.com/send?phone=5493513465019"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="bg-white text-chelsea border border-gold hover:bg-gold hover:text-black">
+              💬 Contact via WhatsApp
+            </Button>
+          </a>
+        </div>
       </div>
     </section>
   )

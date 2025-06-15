@@ -21,22 +21,14 @@ export default function HeroSection() {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-chelsea/80 mb-4">
               Nicolas Sandrin<br />Full Stack Developer
             </h2>
-            <Link href="/journey">
-              <Button className="text-base sm:text-lg px-5 py-3 sm:px-6 sm:py-3 bg-gold text-black hover:bg-chelsea hover:text-white transition-colors duration-300">
-                Start your Journey Here
-              </Button>
-            </Link>
+            
             <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center md:justify-start">
   <Link href="/freelancer">
     <Button variant="default" className="px-5 py-3">
       🧑‍💻 Freelancer Profile
     </Button>
   </Link>
-  <Link href="/business">
-    <Button variant="outline" className="px-5 py-3">
-      🏢 Services for Businesses
-    </Button>
-  </Link>
+  
 </div>  
           </motion.div>
 
